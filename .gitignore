@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+venv/
+env/
+.venv/
+*.egg
+
+# Environment
+.env
+.env.local
+.env.*.local
+backend/.env
+
+# Node
+node_modules/
+frontend/node_modules/
+
+# Build outputs
+frontend/dist/
+frontend/.vite/
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Docker
+.docker/
+
+# FAISS index (generated at runtime)
+backend/*.index
+backend/faiss_index/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb

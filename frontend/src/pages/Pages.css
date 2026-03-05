@@ -1,0 +1,147 @@
+/* ── Generic page ────────────────────────────── */
+.generic-page { padding: 36px 40px; max-width: 760px; }
+
+.add-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+/* Vision Board */
+.goals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.goal-tile {
+  background: color-mix(in srgb, var(--gc) 10%, var(--bg-surface));
+  border: 1px solid color-mix(in srgb, var(--gc) 25%, transparent);
+  border-radius: var(--radius-lg);
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.goal-star { color: var(--gc); }
+.goal-tile p { font-size: 0.875rem; color: var(--text-primary); line-height: 1.5; }
+
+/* Story */
+.story-card { padding: 28px 32px; }
+.story-badge {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--accent); font-weight: 600; margin-bottom: 16px;
+}
+.story-text {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-primary);
+}
+
+/* Reminders */
+.reminders-list { display: flex; flex-direction: column; gap: 10px; }
+.reminder-card { padding: 14px 18px; }
+.reminder-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.reminder-info { flex: 1; min-width: 0; }
+.reminder-text {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.reminder-time {
+  font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;
+}
+.reminder-status {
+  font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 99px;
+  background: rgba(155,127,232,0.1); color: var(--accent);
+}
+.reminder-status.completed {
+  background: rgba(110,198,160,0.1); color: var(--sage);
+}
+.reminder-actions { display: flex; gap: 4px; }
+.icon-btn {
+  width: 28px; height: 28px;
+  background: none; border: none; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted); cursor: pointer;
+  transition: all var(--transition);
+}
+.icon-btn:hover { background: var(--bg-hover); color: var(--text-primary); }
+.icon-btn.danger:hover { background: rgba(232,127,155,0.12); color: var(--rose); }
+.edit-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+/* Journal */
+.journal-list { display: flex; flex-direction: column; gap: 10px; }
+.journal-entry { padding: 0; overflow: hidden; }
+.journal-entry.open { border-color: var(--border); }
+.journal-header {
+  width: 100%; background: none; border: none; cursor: pointer;
+  padding: 16px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  color: var(--text-primary);
+  transition: background var(--transition);
+}
+.journal-header:hover { background: var(--bg-elevated); }
+.journal-meta { display: flex; align-items: center; gap: 10px; text-align: left; }
+.journal-title { font-size: 0.875rem; font-weight: 500; color: var(--text-primary); }
+.journal-date { font-size: 0.77rem; color: var(--text-muted); margin-top: 2px; }
+.journal-messages {
+  border-top: 1px solid var(--border-soft);
+  padding: 16px 20px;
+  display: flex; flex-direction: column; gap: 10px;
+  max-height: 360px; overflow-y: auto;
+}
+.journal-msg { display: flex; flex-direction: column; gap: 4px; }
+.journal-role {
+  font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+.journal-msg.user .journal-role { color: var(--accent); }
+.journal-msg p { font-size: 0.875rem; color: var(--text-primary); line-height: 1.5; }
+
+/* Profile */
+.profile-top {
+  display: flex; align-items: center; gap: 18px;
+}
+.profile-avatar-lg {
+  width: 64px; height: 64px;
+  background: var(--accent-soft);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; font-weight: 700; color: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 0 24px rgba(155,127,232,0.3);
+}
+.profile-info-main { flex: 1; }
+.profile-info-main h2 { font-size: 1.15rem; color: var(--text-primary); }
+.profile-info-main p { font-size: 0.83rem; color: var(--text-secondary); }
+.streak-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 0.78rem; font-weight: 600;
+  color: #e8874f; margin-top: 6px;
+}
+.profile-field {
+  display: flex; align-items: center; gap: 16px; padding: 10px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.profile-field:last-child { border-bottom: none; }
+.profile-field label {
+  width: 90px; font-size: 0.8rem;
+  color: var(--text-muted); flex-shrink: 0;
+}
+.field-value { font-size: 0.875rem; color: var(--text-primary); }
+.empty-field { color: var(--text-muted); font-style: italic; font-size: 0.83rem; }
+
+.spin-icon { animation: spin 1s linear infinite; }

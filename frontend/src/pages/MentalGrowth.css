@@ -1,0 +1,147 @@
+/* Shared page styles */
+.page-loading {
+  display: flex; align-items: center; justify-content: center;
+  height: 60vh;
+}
+
+.page-header {
+  margin-bottom: 28px;
+}
+
+.page-header h1 {
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.page-header p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Mental Growth */
+.mental-page { padding: 36px 40px; max-width: 860px; }
+
+.stats-row {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 140px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.stat-icon { flex-shrink: 0; }
+
+.stat-val {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.77rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.chart-card {
+  margin-bottom: 8px;
+}
+
+.chart-title {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.chart-tooltip {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  font-size: 0.82rem;
+}
+
+.tooltip-date { color: var(--text-muted); margin-bottom: 4px; }
+.tooltip-score { color: var(--text-primary); }
+.tooltip-score strong { color: var(--accent); }
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.sentiment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sentiment-entry {
+  padding: 16px 20px;
+}
+
+.entry-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.entry-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.entry-score-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+.entry-stress {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.entry-suggestions {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.entry-suggestions li {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  padding-left: 14px;
+  position: relative;
+}
+
+.entry-suggestions li::before {
+  content: '·';
+  position: absolute;
+  left: 4px;
+  color: var(--accent);
+}

@@ -1,0 +1,54 @@
+version: '3.9'
+
+services:
+  # ── MongoDB ──────────────────────────────────────────────────────────────
+  mongo:
+    image: mongo:7
+    container_name: aira-mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: aira
+      MONGO_INITDB_ROOT_PASSWORD: airapassword
+      MONGO_INITDB_DATABASE: airadb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  # ── Backend ──────────────────────────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: aira-backend
+    restart: unless-stopped
+    environment:
+      - MONGO_URI=mongodb://aira:airapassword@mongo:27017/airadb?authSource=admin
+      - DB_NAME=airadb
+      - SECRET_KEY=change-this-in-production-use-a-long-random-string
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - FERNET_KEY=${FERNET_KEY}
+      - FRONTEND_URL=http://localhost:3000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo
+    volumes:
+      - ./backend:/app
+
+  # ── Frontend ─────────────────────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: aira-frontend
+    restart: unless-stopped
+    environment:
+      - VITE_API_URL=http://localhost:8000/api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:
