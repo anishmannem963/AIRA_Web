@@ -229,4 +229,4 @@ npm run build
 ---
 
 *AIRA — Adaptive, Interactive, and Responsive Assistant*  
-*B.Tech Project — IIIT Bhubaneswar, 2025*
+
