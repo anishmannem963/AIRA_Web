@@ -1,0 +1,6 @@
+echo '{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}'
+
