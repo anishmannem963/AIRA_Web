@@ -47,7 +47,8 @@ def get_llm():
     if _llm is None and settings.GROQ_API_KEY:
         _llm = ChatGroq(
             groq_api_key=settings.GROQ_API_KEY,
-            model_name="llama-3.1-8b-instant",
+            # model_name="llama-3.1-8b-instant",
+            model_name="llama-3.3-70b-versatile",
             temperature=0.75,
             max_tokens=1024,
         )
